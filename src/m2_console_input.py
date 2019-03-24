@@ -33,7 +33,9 @@ def double_a_float():
     # -------------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
     #   The testing code is already written for you (above).
-    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------、
+    number = input('Enter a number: ')
+    print(float(number)*2)
 
 
 def print_an_integer_many_times():
@@ -65,6 +67,9 @@ def print_an_integer_many_times():
     # TODO: 3. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    integer = int(input('Enter an integer: '))
+    for k in range(integer):
+        print(integer*2)
 
 
 def print_an_integer_many_times_on_one_row():
@@ -87,6 +92,11 @@ def print_an_integer_many_times_on_one_row():
     # HINT: One way to print on a SINGLE line is to build up a string
     #       and then print that (single) string.
     # -------------------------------------------------------------------------
+    integer2 = int(input('Enter an integer: '))
+    s = ''
+    for k in range(integer2):
+        s = s + str(integer2*2)
+    print(s)
 
 
 def input_it_all():
@@ -124,6 +134,14 @@ def input_it_all():
     # TODO: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    flt = float(input('Enter a positive floating point number: '))
+    pinteger = int(input('Enter a positive integer: '))
+    string = input('Enter a string: ')
+    for k in range(pinteger):
+        print(flt**(1/2))
+    for k in range(pinteger):
+        print(string)
+
 
 
 # -----------------------------------------------------------------------------
