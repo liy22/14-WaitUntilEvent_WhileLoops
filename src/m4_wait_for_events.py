@@ -104,6 +104,17 @@ def sum_until_prime_input():
     # -------------------------------------------------------------------------
 
 
+
+    sum = 0
+    while True:
+        intgr = int(input('Enter an integer greater than 1: '))
+        sum = sum + intgr
+        if is_prime(intgr) == True:
+            break
+    print('The sum of the input integers is: ', sum)
+
+
+
 def run_test_next_prime():
     """ Tests the   next_prime    function. """
     # -------------------------------------------------------------------------
@@ -196,7 +207,9 @@ def next_prime(m):
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   is_prime   function above appropriately.
     # -------------------------------------------------------------------------
-
+    while is_prime(m) == False:
+        m = m +1
+    return m
 
 def run_test_prime_gap():
     """ Tests the   prime_gap    function. """
@@ -333,7 +346,21 @@ def prime_gap(m):
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   *** next_prime ***   function
     #       (that you implemented) appropriately.
+    #pri_list = [2,3]
+    #n = 3
+   # while pri_list[-1]-pri_list[-2] < m :
+    #    n = n + 1
+    # 3   pri_list = pri_list+[n]
+    #return pri_list[-2]
     # -------------------------------------------------------------------------
+    x = 1
+    while True:
+        substract = next_prime(next_prime(x)+1)-next_prime(x)
+        x = x + 1
+        if substract >= m:
+            return next_prime(x)
+
+
 
 
 def run_test_wait_for_sum_of_cubes():
@@ -415,7 +442,10 @@ def run_test_wait_for_sum_of_cubes():
     # Test 7:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 3
+    actual = wait_for_sum_of_cubes(30)
+    print('Expected:',expected)
+    print('Actual:  ',actual)
     print('TEST ENDED!')
 
     # TODO 6 (continued):
@@ -425,6 +455,11 @@ def run_test_wait_for_sum_of_cubes():
     # Test 8:
     print()
     print('TEST STARTED!  Has it ended?')
+    expected = 5
+    actual = wait_for_sum_of_cubes(200)
+    print('Expected:', expected)
+    print('Actual:  ',actual)
+
 
     print('TEST ENDED!')
 
@@ -473,7 +508,14 @@ def wait_for_sum_of_cubes(x):
     # (or look up) a formula that would allow a faster computation.
     # But no fair using any such approach in this implementation.
     # -------------------------------------------------------------------------
+    k = 1
+    total = 0
+    while True:
+        total = total + k**3
 
+        if total >= x:
+            return k
+        k = k + 1
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
