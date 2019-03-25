@@ -353,12 +353,13 @@ def prime_gap(m):
     # 3   pri_list = pri_list+[n]
     #return pri_list[-2]
     # -------------------------------------------------------------------------
-    x = 1
+    x = 2
     while True:
         substract = next_prime(next_prime(x)+1)-next_prime(x)
-        x = x + 1
+
         if substract >= m:
             return next_prime(x)
+        x = x + 1
 
 
 
