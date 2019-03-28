@@ -345,7 +345,7 @@ def prime_gap(m):
     #
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   *** next_prime ***   function
-    #       (that you implemented) appropriately.
+    #       (that you iz    QAmplemented) appropriately.
     #pri_list = [2,3]
     #n = 3
    # while pri_list[-1]-pri_list[-2] < m :
